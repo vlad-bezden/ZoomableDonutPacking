@@ -7,26 +7,26 @@
         {
           "name": "cluster",
           "children": [
-            {"name": "AgglomerativeCluster", "size": 3938, "value": 80},
-            {"name": "CommunityStructure", "size": 3812, "value": 83},
-            {"name": "HierarchicalCluster", "size": 6714, "value": 66},
-            {"name": "MergeEdge", "size": 743, "value": 10}
+            {"name": "AgglomerativeCluster", "size": 3938, "progress": 80},
+            {"name": "CommunityStructure", "size": 3812, "progress": 83},
+            {"name": "HierarchicalCluster", "size": 6714, "progress": 66},
+            {"name": "MergeEdge", "size": 743, "progress": 10}
           ]
         },
         {
           "name": "graph",
           "children": [
-            {"name": "BetweennessCentrality", "size": 3534, "value": 58},
-            {"name": "LinkDistance", "size": 5731, "value": 76},
-            {"name": "MaxFlowMinCut", "size": 7840, "value": 66},
-            {"name": "ShortestPaths", "size": 5914, "value": 9},
-            {"name": "SpanningTree", "size": 3416, "value": 82}
+            {"name": "BetweennessCentrality", "size": 3534, "progress": 58},
+            {"name": "LinkDistance", "size": 5731, "progress": 76},
+            {"name": "MaxFlowMinCut", "size": 7840, "progress": 66},
+            {"name": "ShortestPaths", "size": 5914, "progress": 9},
+            {"name": "SpanningTree", "size": 3416, "progress": 82}
           ]
         },
         {
           "name": "optimization",
           "children": [
-            {"name": "AspectRatioBanker", "size": 7074, "value": 69}
+            {"name": "AspectRatioBanker", "size": 7074, "progress": 69}
           ]
         }
       ]
@@ -34,31 +34,31 @@
     {
       "name": "animate",
       "children": [
-        {"name": "Easing", "size": 17010, "value": 76},
-        {"name": "FunctionSequence", "size": 5842, "value": 22},
+        {"name": "Easing", "size": 17010, "progress": 76},
+        {"name": "FunctionSequence", "size": 5842, "progress": 22},
         {
           "name": "interpolate",
           "children": [
-            {"name": "ArrayInterpolator", "size": 1983, "value": 39},
-            {"name": "ColorInterpolator", "size": 2047, "value": 35},
-            {"name": "DateInterpolator", "size": 1375, "value": 95},
-            {"name": "Interpolator", "size": 8746, "value": 79},
-            {"name": "MatrixInterpolator", "size": 2202, "value": 53},
-            {"name": "NumberInterpolator", "size": 1382, "value": 77},
-            {"name": "ObjectInterpolator", "size": 1629, "value": 32},
-            {"name": "PointInterpolator", "size": 1675, "value": 95},
-            {"name": "RectangleInterpolator", "size": 2042, "value": 63}
+            {"name": "ArrayInterpolator", "size": 1983, "progress": 39},
+            {"name": "ColorInterpolator", "size": 2047, "progress": 35},
+            {"name": "DateInterpolator", "size": 1375, "progress": 95},
+            {"name": "Interpolator", "size": 8746, "progress": 79},
+            {"name": "MatrixInterpolator", "size": 2202, "progress": 53},
+            {"name": "NumberInterpolator", "size": 1382, "progress": 77},
+            {"name": "ObjectInterpolator", "size": 1629, "progress": 32},
+            {"name": "PointInterpolator", "size": 1675, "progress": 95},
+            {"name": "RectangleInterpolator", "size": 2042, "progress": 63}
           ]
         },
-        {"name": "ISchedulable", "size": 1041, "value": 96},
-        {"name": "Parallel", "size": 5176, "value": 19},
-        {"name": "Pause", "size": 449, "value": 17},
-        {"name": "Scheduler", "size": 5593, "value": 28},
-        {"name": "Sequence", "size": 5534, "value": 54},
-        {"name": "Transition", "size": 9201, "value": 51},
-        {"name": "Transitioner", "size": 19975, "value": 29},
-        {"name": "TransitionEvent", "size": 1116, "value": 74},
-        {"name": "Tween", "size": 6006, "value": 9}
+        {"name": "ISchedulable", "size": 1041, "progress": 96},
+        {"name": "Parallel", "size": 5176, "progress": 19},
+        {"name": "Pause", "size": 449, "progress": 17},
+        {"name": "Scheduler", "size": 5593, "progress": 28},
+        {"name": "Sequence", "size": 5534, "progress": 54},
+        {"name": "Transition", "size": 9201, "progress": 51},
+        {"name": "Transitioner", "size": 19975, "progress": 29},
+        {"name": "TransitionEvent", "size": 1116, "progress": 74},
+        {"name": "Tween", "size": 6006, "progress": 9}
       ]
     },
     {
@@ -67,177 +67,177 @@
         {
           "name": "converters",
           "children": [
-            {"name": "Converters", "size": 721, "value": 64},
-            {"name": "DelimitedTextConverter", "size": 4294, "value": 13},
-            {"name": "GraphMLConverter", "size": 9800, "value": 37},
-            {"name": "IDataConverter", "size": 1314, "value": 96},
-            {"name": "JSONConverter", "size": 2220, "value": 62}
+            {"name": "Converters", "size": 721, "progress": 64},
+            {"name": "DelimitedTextConverter", "size": 4294, "progress": 13},
+            {"name": "GraphMLConverter", "size": 9800, "progress": 37},
+            {"name": "IDataConverter", "size": 1314, "progress": 96},
+            {"name": "JSONConverter", "size": 2220, "progress": 62}
           ]
         },
-        {"name": "DataField", "size": 1759, "value": 77},
-        {"name": "DataSchema", "size": 2165, "value": 33},
-        {"name": "DataSet", "size": 586, "value": 6},
-        {"name": "DataSource", "size": 3331, "value": 78},
-        {"name": "DataTable", "size": 772, "value": 73},
-        {"name": "DataUtil", "size": 3322, "value": 77}
+        {"name": "DataField", "size": 1759, "progress": 77},
+        {"name": "DataSchema", "size": 2165, "progress": 33},
+        {"name": "DataSet", "size": 586, "progress": 6},
+        {"name": "DataSource", "size": 3331, "progress": 78},
+        {"name": "DataTable", "size": 772, "progress": 73},
+        {"name": "DataUtil", "size": 3322, "progress": 77}
       ]
     },
     {
       "name": "display",
       "children": [
-        {"name": "DirtySprite", "size": 8833, "value": 67},
-        {"name": "LineSprite", "size": 1732, "value": 2},
-        {"name": "RectSprite", "size": 3623, "value": 84},
-        {"name": "TextSprite", "size": 10066, "value": 92}
+        {"name": "DirtySprite", "size": 8833, "progress": 67},
+        {"name": "LineSprite", "size": 1732, "progress": 2},
+        {"name": "RectSprite", "size": 3623, "progress": 84},
+        {"name": "TextSprite", "size": 10066, "progress": 92}
       ]
     },
     {
       "name": "flex",
       "children": [
-        {"name": "FlareVis", "size": 4116, "value": 75}
+        {"name": "FlareVis", "size": 4116, "progress": 75}
       ]
     },
     {
       "name": "physics",
       "children": [
-        {"name": "DragForce", "size": 1082, "value": 12},
-        {"name": "GravityForce", "size": 1336, "value": 40},
-        {"name": "IForce", "size": 319, "value": 28},
-        {"name": "NBodyForce", "size": 10498, "value": 30},
-        {"name": "Particle", "size": 2822, "value": 25},
-        {"name": "Simulation", "size": 9983, "value": 17},
-        {"name": "Spring", "size": 2213, "value": 56},
-        {"name": "SpringForce", "size": 1681, "value": 42}
+        {"name": "DragForce", "size": 1082, "progress": 12},
+        {"name": "GravityForce", "size": 1336, "progress": 40},
+        {"name": "IForce", "size": 319, "progress": 28},
+        {"name": "NBodyForce", "size": 10498, "progress": 30},
+        {"name": "Particle", "size": 2822, "progress": 25},
+        {"name": "Simulation", "size": 9983, "progress": 17},
+        {"name": "Spring", "size": 2213, "progress": 56},
+        {"name": "SpringForce", "size": 1681, "progress": 42}
       ]
     },
     {
       "name": "query",
       "children": [
-        {"name": "AggregateExpression", "size": 1616, "value": 2},
-        {"name": "And", "size": 1027, "value": 33},
-        {"name": "Arithmetic", "size": 3891, "value": 68},
-        {"name": "Average", "size": 891, "value": 60},
-        {"name": "BinaryExpression", "size": 2893, "value": 97},
-        {"name": "Comparison", "size": 5103, "value": 76},
-        {"name": "CompositeExpression", "size": 3677, "value": 39},
-        {"name": "Count", "size": 781, "value": 68},
-        {"name": "DateUtil", "size": 4141, "value": 85},
-        {"name": "Distinct", "size": 933, "value": 41},
-        {"name": "Expression", "size": 5130, "value": 71},
-        {"name": "ExpressionIterator", "size": 3617, "value": 2},
-        {"name": "Fn", "size": 3240, "value": 51},
-        {"name": "If", "size": 2732, "value": 15},
-        {"name": "IsA", "size": 2039, "value": 30},
-        {"name": "Literal", "size": 1214, "value": 3},
-        {"name": "Match", "size": 3748, "value": 40},
-        {"name": "Maximum", "size": 843, "value": 33},
+        {"name": "AggregateExpression", "size": 1616, "progress": 2},
+        {"name": "And", "size": 1027, "progress": 33},
+        {"name": "Arithmetic", "size": 3891, "progress": 68},
+        {"name": "Average", "size": 891, "progress": 60},
+        {"name": "BinaryExpression", "size": 2893, "progress": 97},
+        {"name": "Comparison", "size": 5103, "progress": 76},
+        {"name": "CompositeExpression", "size": 3677, "progress": 39},
+        {"name": "Count", "size": 781, "progress": 68},
+        {"name": "DateUtil", "size": 4141, "progress": 85},
+        {"name": "Distinct", "size": 933, "progress": 41},
+        {"name": "Expression", "size": 5130, "progress": 71},
+        {"name": "ExpressionIterator", "size": 3617, "progress": 2},
+        {"name": "Fn", "size": 3240, "progress": 51},
+        {"name": "If", "size": 2732, "progress": 15},
+        {"name": "IsA", "size": 2039, "progress": 30},
+        {"name": "Literal", "size": 1214, "progress": 3},
+        {"name": "Match", "size": 3748, "progress": 40},
+        {"name": "Maximum", "size": 843, "progress": 33},
         {
           "name": "methods",
           "children": [
-            {"name": "add", "size": 593, "value": 64},
-            {"name": "and", "size": 330, "value": 79},
-            {"name": "average", "size": 287, "value": 53},
-            {"name": "count", "size": 277, "value": 73},
-            {"name": "distinct", "size": 292, "value": 84},
-            {"name": "div", "size": 595, "value": 12},
-            {"name": "eq", "size": 594, "value": 67},
-            {"name": "fn", "size": 460, "value": 13},
-            {"name": "gt", "size": 603, "value": 57},
-            {"name": "gte", "size": 625, "value": 28},
-            {"name": "iff", "size": 748, "value": 41},
-            {"name": "isa", "size": 461, "value": 92},
-            {"name": "lt", "size": 597, "value": 39},
-            {"name": "lte", "size": 619, "value": 100},
-            {"name": "max", "size": 283, "value": 60},
-            {"name": "min", "size": 283, "value": 72},
-            {"name": "mod", "size": 591, "value": 6},
-            {"name": "mul", "size": 603, "value": 36},
-            {"name": "neq", "size": 599, "value": 11},
-            {"name": "not", "size": 386, "value": 15},
-            {"name": "or", "size": 323, "value": 74},
-            {"name": "orderby", "size": 307, "value": 87},
-            {"name": "range", "size": 772, "value": 66},
-            {"name": "select", "size": 296, "value": 30},
-            {"name": "stddev", "size": 363, "value": 100},
-            {"name": "sub", "size": 600, "value": 57},
-            {"name": "sum", "size": 280, "value": 92},
-            {"name": "update", "size": 307, "value": 33},
-            {"name": "variance", "size": 335, "value": 48},
-            {"name": "where", "size": 299, "value": 81},
-            {"name": "xor", "size": 354, "value": 95},
-            {"name": "_", "size": 264, "value": 66}
+            {"name": "add", "size": 593, "progress": 64},
+            {"name": "and", "size": 330, "progress": 79},
+            {"name": "average", "size": 287, "progress": 53},
+            {"name": "count", "size": 277, "progress": 73},
+            {"name": "distinct", "size": 292, "progress": 84},
+            {"name": "div", "size": 595, "progress": 12},
+            {"name": "eq", "size": 594, "progress": 67},
+            {"name": "fn", "size": 460, "progress": 13},
+            {"name": "gt", "size": 603, "progress": 57},
+            {"name": "gte", "size": 625, "progress": 28},
+            {"name": "iff", "size": 748, "progress": 41},
+            {"name": "isa", "size": 461, "progress": 92},
+            {"name": "lt", "size": 597, "progress": 39},
+            {"name": "lte", "size": 619, "progress": 100},
+            {"name": "max", "size": 283, "progress": 60},
+            {"name": "min", "size": 283, "progress": 72},
+            {"name": "mod", "size": 591, "progress": 6},
+            {"name": "mul", "size": 603, "progress": 36},
+            {"name": "neq", "size": 599, "progress": 11},
+            {"name": "not", "size": 386, "progress": 15},
+            {"name": "or", "size": 323, "progress": 74},
+            {"name": "orderby", "size": 307, "progress": 87},
+            {"name": "range", "size": 772, "progress": 66},
+            {"name": "select", "size": 296, "progress": 30},
+            {"name": "stddev", "size": 363, "progress": 100},
+            {"name": "sub", "size": 600, "progress": 57},
+            {"name": "sum", "size": 280, "progress": 92},
+            {"name": "update", "size": 307, "progress": 33},
+            {"name": "variance", "size": 335, "progress": 48},
+            {"name": "where", "size": 299, "progress": 81},
+            {"name": "xor", "size": 354, "progress": 95},
+            {"name": "_", "size": 264, "progress": 66}
           ]
         },
-        {"name": "Minimum", "size": 843, "value": 19},
-        {"name": "Not", "size": 1554, "value": 80},
-        {"name": "Or", "size": 970, "value": 43},
-        {"name": "Query", "size": 13896, "value": 84},
-        {"name": "Range", "size": 1594, "value": 83},
-        {"name": "StringUtil", "size": 4130, "value": 33},
-        {"name": "Sum", "size": 791, "value": 96},
-        {"name": "Variable", "size": 1124, "value": 44},
-        {"name": "Variance", "size": 1876, "value": 91},
-        {"name": "Xor", "size": 1101, "value": 42}
+        {"name": "Minimum", "size": 843, "progress": 19},
+        {"name": "Not", "size": 1554, "progress": 80},
+        {"name": "Or", "size": 970, "progress": 43},
+        {"name": "Query", "size": 13896, "progress": 84},
+        {"name": "Range", "size": 1594, "progress": 83},
+        {"name": "StringUtil", "size": 4130, "progress": 33},
+        {"name": "Sum", "size": 791, "progress": 96},
+        {"name": "Variable", "size": 1124, "progress": 44},
+        {"name": "Variance", "size": 1876, "progress": 91},
+        {"name": "Xor", "size": 1101, "progress": 42}
       ]
     },
     {
       "name": "scale",
       "children": [
-        {"name": "IScaleMap", "size": 2105, "value": 44},
-        {"name": "LinearScale", "size": 1316, "value": 8},
-        {"name": "LogScale", "size": 3151, "value": 97},
-        {"name": "OrdinalScale", "size": 3770, "value": 48},
-        {"name": "QuantileScale", "size": 2435, "value": 22},
-        {"name": "QuantitativeScale", "size": 4839, "value": 29},
-        {"name": "RootScale", "size": 1756, "value": 27},
-        {"name": "Scale", "size": 4268, "value": 39},
-        {"name": "ScaleType", "size": 1821, "value": 24},
-        {"name": "TimeScale", "size": 5833, "value": 26}
+        {"name": "IScaleMap", "size": 2105, "progress": 44},
+        {"name": "LinearScale", "size": 1316, "progress": 8},
+        {"name": "LogScale", "size": 3151, "progress": 97},
+        {"name": "OrdinalScale", "size": 3770, "progress": 48},
+        {"name": "QuantileScale", "size": 2435, "progress": 22},
+        {"name": "QuantitativeScale", "size": 4839, "progress": 29},
+        {"name": "RootScale", "size": 1756, "progress": 27},
+        {"name": "Scale", "size": 4268, "progress": 39},
+        {"name": "ScaleType", "size": 1821, "progress": 24},
+        {"name": "TimeScale", "size": 5833, "progress": 26}
       ]
     },
     {
       "name": "util",
       "children": [
-        {"name": "Arrays", "size": 8258, "value": 36},
-        {"name": "Colors", "size": 10001, "value": 42},
-        {"name": "Dates", "size": 8217, "value": 81},
-        {"name": "Displays", "size": 12555, "value": 26},
-        {"name": "Filter", "size": 2324, "value": 37},
-        {"name": "Geometry", "size": 10993, "value": 11},
+        {"name": "Arrays", "size": 8258, "progress": 36},
+        {"name": "Colors", "size": 10001, "progress": 42},
+        {"name": "Dates", "size": 8217, "progress": 81},
+        {"name": "Displays", "size": 12555, "progress": 26},
+        {"name": "Filter", "size": 2324, "progress": 37},
+        {"name": "Geometry", "size": 10993, "progress": 11},
         {
           "name": "heap",
           "children": [
-            {"name": "FibonacciHeap", "size": 9354, "value": 73},
-            {"name": "HeapNode", "size": 1233, "value": 78}
+            {"name": "FibonacciHeap", "size": 9354, "progress": 73},
+            {"name": "HeapNode", "size": 1233, "progress": 78}
           ]
         },
-        {"name": "IEvaluable", "size": 335, "value": 33},
-        {"name": "IPredicate", "size": 383, "value": 82},
-        {"name": "IValueProxy", "size": 874, "value": 38},
+        {"name": "IEvaluable", "size": 335, "progress": 33},
+        {"name": "IPredicate", "size": 383, "progress": 82},
+        {"name": "IprogressProxy", "size": 874, "progress": 38},
         {
           "name": "math",
           "children": [
-            {"name": "DenseMatrix", "size": 3165, "value": 23},
-            {"name": "IMatrix", "size": 2815, "value": 67},
-            {"name": "SparseMatrix", "size": 3366, "value": 97}
+            {"name": "DenseMatrix", "size": 3165, "progress": 23},
+            {"name": "IMatrix", "size": 2815, "progress": 67},
+            {"name": "SparseMatrix", "size": 3366, "progress": 97}
           ]
         },
-        {"name": "Maths", "size": 17705, "value": 81},
-        {"name": "Orientation", "size": 1486, "value": 73},
+        {"name": "Maths", "size": 17705, "progress": 81},
+        {"name": "Orientation", "size": 1486, "progress": 73},
         {
           "name": "palette",
           "children": [
-            {"name": "ColorPalette", "size": 6367, "value": 1},
-            {"name": "Palette", "size": 1229, "value": 76},
-            {"name": "ShapePalette", "size": 2059, "value": 9},
-            {"name": "SizePalette", "size": 2291, "value": 35}
+            {"name": "ColorPalette", "size": 6367, "progress": 1},
+            {"name": "Palette", "size": 1229, "progress": 76},
+            {"name": "ShapePalette", "size": 2059, "progress": 9},
+            {"name": "SizePalette", "size": 2291, "progress": 35}
           ]
         },
-        {"name": "Property", "size": 5559, "value": 14},
-        {"name": "Shapes", "size": 19118, "value": 93},
-        {"name": "Sort", "size": 6887, "value": 44},
-        {"name": "Stats", "size": 6557, "value": 50},
-        {"name": "Strings", "size": 22026, "value": 71}
+        {"name": "Property", "size": 5559, "progress": 14},
+        {"name": "Shapes", "size": 19118, "progress": 93},
+        {"name": "Sort", "size": 6887, "progress": 44},
+        {"name": "Stats", "size": 6557, "progress": 50},
+        {"name": "Strings", "size": 22026, "progress": 71}
       ]
     },
     {
@@ -246,66 +246,66 @@
         {
           "name": "axis",
           "children": [
-            {"name": "Axes", "size": 1302, "value": 90},
-            {"name": "Axis", "size": 24593, "value": 52},
-            {"name": "AxisGridLine", "size": 652, "value": 10},
-            {"name": "AxisLabel", "size": 636, "value": 38},
-            {"name": "CartesianAxes", "size": 6703, "value": 41}
+            {"name": "Axes", "size": 1302, "progress": 90},
+            {"name": "Axis", "size": 24593, "progress": 52},
+            {"name": "AxisGridLine", "size": 652, "progress": 10},
+            {"name": "AxisLabel", "size": 636, "progress": 38},
+            {"name": "CartesianAxes", "size": 6703, "progress": 41}
           ]
         },
         {
           "name": "controls",
           "children": [
-            {"name": "AnchorControl", "size": 2138, "value": 63},
-            {"name": "ClickControl", "size": 3824, "value": 33},
-            {"name": "Control", "size": 1353, "value": 67},
-            {"name": "ControlList", "size": 4665, "value": 37},
-            {"name": "DragControl", "size": 2649, "value": 79},
-            {"name": "ExpandControl", "size": 2832, "value": 44},
-            {"name": "HoverControl", "size": 4896, "value": 62},
-            {"name": "IControl", "size": 763, "value": 26},
-            {"name": "PanZoomControl", "size": 5222, "value": 17},
-            {"name": "SelectionControl", "size": 7862, "value": 84},
-            {"name": "TooltipControl", "size": 8435, "value": 2}
+            {"name": "AnchorControl", "size": 2138, "progress": 63},
+            {"name": "ClickControl", "size": 3824, "progress": 33},
+            {"name": "Control", "size": 1353, "progress": 67},
+            {"name": "ControlList", "size": 4665, "progress": 37},
+            {"name": "DragControl", "size": 2649, "progress": 79},
+            {"name": "ExpandControl", "size": 2832, "progress": 44},
+            {"name": "HoverControl", "size": 4896, "progress": 62},
+            {"name": "IControl", "size": 763, "progress": 26},
+            {"name": "PanZoomControl", "size": 5222, "progress": 17},
+            {"name": "SelectionControl", "size": 7862, "progress": 84},
+            {"name": "TooltipControl", "size": 8435, "progress": 2}
           ]
         },
         {
           "name": "data",
           "children": [
-            {"name": "Data", "size": 20544, "value": 71},
-            {"name": "DataList", "size": 19788, "value": 22},
-            {"name": "DataSprite", "size": 10349, "value": 86},
-            {"name": "EdgeSprite", "size": 3301, "value": 12},
-            {"name": "NodeSprite", "size": 19382, "value": 26},
+            {"name": "Data", "size": 20544, "progress": 71},
+            {"name": "DataList", "size": 19788, "progress": 22},
+            {"name": "DataSprite", "size": 10349, "progress": 86},
+            {"name": "EdgeSprite", "size": 3301, "progress": 12},
+            {"name": "NodeSprite", "size": 19382, "progress": 26},
             {
               "name": "render",
               "children": [
-                {"name": "ArrowType", "size": 698, "value": 76},
-                {"name": "EdgeRenderer", "size": 5569, "value": 37},
-                {"name": "IRenderer", "size": 353, "value": 16},
-                {"name": "ShapeRenderer", "size": 2247, "value": 84}
+                {"name": "ArrowType", "size": 698, "progress": 76},
+                {"name": "EdgeRenderer", "size": 5569, "progress": 37},
+                {"name": "IRenderer", "size": 353, "progress": 16},
+                {"name": "ShapeRenderer", "size": 2247, "progress": 84}
               ]
             },
-            {"name": "ScaleBinding", "size": 11275, "value": 27},
-            {"name": "Tree", "size": 7147, "value": 62},
-            {"name": "TreeBuilder", "size": 9930, "value": 78}
+            {"name": "ScaleBinding", "size": 11275, "progress": 27},
+            {"name": "Tree", "size": 7147, "progress": 62},
+            {"name": "TreeBuilder", "size": 9930, "progress": 78}
           ]
         },
         {
           "name": "events",
           "children": [
-            {"name": "DataEvent", "size": 2313, "value": 93},
-            {"name": "SelectionEvent", "size": 1880, "value": 57},
-            {"name": "TooltipEvent", "size": 1701, "value": 7},
-            {"name": "VisualizationEvent", "size": 1117, "value": 38}
+            {"name": "DataEvent", "size": 2313, "progress": 93},
+            {"name": "SelectionEvent", "size": 1880, "progress": 57},
+            {"name": "TooltipEvent", "size": 1701, "progress": 7},
+            {"name": "VisualizationEvent", "size": 1117, "progress": 38}
           ]
         },
         {
           "name": "legend",
           "children": [
-            {"name": "Legend", "size": 20859, "value": 95},
-            {"name": "LegendItem", "size": 4614, "value": 76},
-            {"name": "LegendRange", "size": 10530, "value": 39}
+            {"name": "Legend", "size": 20859, "progress": 95},
+            {"name": "LegendItem", "size": 4614, "progress": 76},
+            {"name": "LegendRange", "size": 10530, "progress": 39}
           ]
         },
         {
@@ -314,66 +314,66 @@
             {
               "name": "distortion",
               "children": [
-                {"name": "BifocalDistortion", "size": 4461, "value": 25},
-                {"name": "Distortion", "size": 6314, "value": 58},
-                {"name": "FisheyeDistortion", "size": 3444, "value": 43}
+                {"name": "BifocalDistortion", "size": 4461, "progress": 25},
+                {"name": "Distortion", "size": 6314, "progress": 58},
+                {"name": "FisheyeDistortion", "size": 3444, "progress": 43}
               ]
             },
             {
               "name": "encoder",
               "children": [
-                {"name": "ColorEncoder", "size": 3179, "value": 98},
-                {"name": "Encoder", "size": 4060, "value": 19},
-                {"name": "PropertyEncoder", "size": 4138, "value": 57},
-                {"name": "ShapeEncoder", "size": 1690, "value": 99},
-                {"name": "SizeEncoder", "size": 1830, "value": 26}
+                {"name": "ColorEncoder", "size": 3179, "progress": 98},
+                {"name": "Encoder", "size": 4060, "progress": 19},
+                {"name": "PropertyEncoder", "size": 4138, "progress": 57},
+                {"name": "ShapeEncoder", "size": 1690, "progress": 99},
+                {"name": "SizeEncoder", "size": 1830, "progress": 26}
               ]
             },
             {
               "name": "filter",
               "children": [
-                {"name": "FisheyeTreeFilter", "size": 5219, "value": 15},
-                {"name": "GraphDistanceFilter", "size": 3165, "value": 68},
-                {"name": "VisibilityFilter", "size": 3509, "value": 43}
+                {"name": "FisheyeTreeFilter", "size": 5219, "progress": 15},
+                {"name": "GraphDistanceFilter", "size": 3165, "progress": 68},
+                {"name": "VisibilityFilter", "size": 3509, "progress": 43}
               ]
             },
-            {"name": "IOperator", "size": 1286, "value": 85},
+            {"name": "IOperator", "size": 1286, "progress": 85},
             {
               "name": "label",
               "children": [
-                {"name": "Labeler", "size": 9956, "value": 16},
-                {"name": "RadialLabeler", "size": 3899, "value": 13},
-                {"name": "StackedAreaLabeler", "size": 3202, "value": 26}
+                {"name": "Labeler", "size": 9956, "progress": 16},
+                {"name": "RadialLabeler", "size": 3899, "progress": 13},
+                {"name": "StackedAreaLabeler", "size": 3202, "progress": 26}
               ]
             },
             {
               "name": "layout",
               "children": [
-                {"name": "AxisLayout", "size": 6725, "value": 94},
-                {"name": "BundledEdgeRouter", "size": 3727, "value": 95},
-                {"name": "CircleLayout", "size": 9317, "value": 96},
-                {"name": "CirclePackingLayout", "size": 12003, "value": 58},
-                {"name": "DendrogramLayout", "size": 4853, "value": 46},
-                {"name": "ForceDirectedLayout", "size": 8411, "value": 12},
-                {"name": "IcicleTreeLayout", "size": 4864, "value": 82},
-                {"name": "IndentedTreeLayout", "size": 3174, "value": 82},
-                {"name": "Layout", "size": 7881, "value": 98},
-                {"name": "NodeLinkTreeLayout", "size": 12870, "value": 56},
-                {"name": "PieLayout", "size": 2728, "value": 13},
-                {"name": "RadialTreeLayout", "size": 12348, "value": 34},
-                {"name": "RandomLayout", "size": 870, "value": 44},
-                {"name": "StackedAreaLayout", "size": 9121, "value": 73},
-                {"name": "TreeMapLayout", "size": 9191, "value": 99}
+                {"name": "AxisLayout", "size": 6725, "progress": 94},
+                {"name": "BundledEdgeRouter", "size": 3727, "progress": 95},
+                {"name": "CircleLayout", "size": 9317, "progress": 96},
+                {"name": "CirclePackingLayout", "size": 12003, "progress": 58},
+                {"name": "DendrogramLayout", "size": 4853, "progress": 46},
+                {"name": "ForceDirectedLayout", "size": 8411, "progress": 12},
+                {"name": "IcicleTreeLayout", "size": 4864, "progress": 82},
+                {"name": "IndentedTreeLayout", "size": 3174, "progress": 82},
+                {"name": "Layout", "size": 7881, "progress": 98},
+                {"name": "NodeLinkTreeLayout", "size": 12870, "progress": 56},
+                {"name": "PieLayout", "size": 2728, "progress": 13},
+                {"name": "RadialTreeLayout", "size": 12348, "progress": 34},
+                {"name": "RandomLayout", "size": 870, "progress": 44},
+                {"name": "StackedAreaLayout", "size": 9121, "progress": 73},
+                {"name": "TreeMapLayout", "size": 9191, "progress": 99}
               ]
             },
-            {"name": "Operator", "size": 2490, "value": 11},
-            {"name": "OperatorList", "size": 5248, "value": 98},
-            {"name": "OperatorSequence", "size": 4190, "value": 23},
-            {"name": "OperatorSwitch", "size": 2581, "value": 48},
-            {"name": "SortOperator", "size": 2023, "value": 36}
+            {"name": "Operator", "size": 2490, "progress": 11},
+            {"name": "OperatorList", "size": 5248, "progress": 98},
+            {"name": "OperatorSequence", "size": 4190, "progress": 23},
+            {"name": "OperatorSwitch", "size": 2581, "progress": 48},
+            {"name": "SortOperator", "size": 2023, "progress": 36}
           ]
         },
-        {"name": "Visualization", "size": 16540, "value": 96}
+        {"name": "Visualization", "size": 16540, "progress": 96}
       ]
     }
   ]

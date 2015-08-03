@@ -8,7 +8,7 @@
 }
 
 .node--leaf {
-    fill: white;
+    fill: #dadada;
 }
 
 .label {
@@ -22,3 +22,8 @@
 .node--leaf {
     pointer-events: none;
 }
+
+.valuePath {
+    fill: #117716
+}
+

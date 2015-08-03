@@ -8,7 +8,7 @@
     var margin = 20,
         padding = 2,
         donutSize = 25,
-        diameter = 650,
+        diameter = 800,
         root;
 
     // load json data
@@ -34,20 +34,22 @@
                 return d.size;
             });
 
-        var arc = d3.svg.arc()
+        var valueArc = d3.svg.arc()
             .innerRadius(function (d) {
                 return d.r * d.k - donutSize;
-                //return 0; // circle
             })
             .outerRadius(function (d) {
                 return d.r * d.k;
             })
             .startAngle(0)
             .endAngle(function (d) {
-                return d.value / 100 * 2 * Math.PI;
+                if(d.children) {
+                    return 0;
+                }
+                return d.progress / 100 * 2 * Math.PI;
             });
 
-        var arc2 = d3.svg.arc()
+        var remainingArc = d3.svg.arc()
             .innerRadius(function (d) {
                 return d.r * d.k - donutSize;
             })
@@ -55,8 +57,10 @@
                 return d.r * d.k;
             })
             .startAngle(function (d) {
-                return d.value / 100 * 2 * Math.PI;
-                //return 2 * Math.PI;
+                if(d.children) {
+                    return 0;
+                }
+                return d.progress / 100 * 2 * Math.PI;
             })
             .endAngle(function () {
                 return 2 * Math.PI;
@@ -81,10 +85,7 @@
 
         var valuePath = bubble.append("path")
             .attr("class", function (d) {
-                return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root";
-            })
-            .style("fill", function () {
-                return "#00FF00";
+                return d.parent ? d.children ? "node" : "node node--leaf valuePath" : "node node--root";
             })
             .on("click", function (d) {
                 if (focus !== d) {
@@ -98,7 +99,7 @@
                 return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root";
             })
             .style("fill", function (d) {
-                return color(d.depth);
+                return d.children ? color(d.depth) : null;
             })
             .on("click", function (d) {
                 if (focus !== d) {
@@ -166,14 +167,15 @@
             node.attr("transform", function (d) {
                 return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")";
             });
+
             valuePath.attr("d", function (d) {
                 d.k = k;
-                return arc(d);
+                return valueArc(d);
             });
 
             remainingPath.attr("d", function (d) {
                 d.k = k;
-                return arc2(d);
+                return remainingArc(d);
             });
         }
 
@@ -188,8 +190,6 @@
             }
             return 1 + d3.max(branch.children.map(depthCount));
         }
-
-        d3.select(self.frameElement).style("height", diameter + "px");
     };
 
 }());
