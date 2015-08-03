@@ -1,5 +1,5 @@
 /**
- * Created by vbezden on 8/3/2015.
+ * Created by Vlad Bezden on 8/3/2015.
  */
 
 (function () {
@@ -124,7 +124,6 @@
                 return d.name;
             });
 
-        //var node = svg.selectAll("circle,text");
         var node = svg.selectAll(".bubble,text");
 
         d3.select("body")
@@ -167,9 +166,6 @@
             node.attr("transform", function (d) {
                 return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")";
             });
-            // circle.attr("r", function(d) {
-            //     return d.r * k;
-            // });
             valuePath.attr("d", function (d) {
                 d.k = k;
                 return arc(d);
