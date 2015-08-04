@@ -24,7 +24,7 @@
     var visualize = function () {
         var color = d3.scale.linear()
             .domain([0, depthCount(root)])
-            .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
+            .range(['hsl(152,80%,80%)', 'hsl(228,30%,40%)'])
             .interpolate(d3.interpolateHcl);
 
         var pack = d3.layout.pack()
@@ -66,42 +66,42 @@
                 return 2 * Math.PI;
             });
 
-        var svg = d3.select("body")
-            .append("svg")
-            .attr("width", diameter)
-            .attr("height", diameter)
-            .append("g")
-            .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+        var svg = d3.select('body')
+            .append('svg')
+            .attr('width', diameter)
+            .attr('height', diameter)
+            .append('g')
+            .attr('transform', 'translate(' + diameter / 2 + ',' + diameter / 2 + ')');
 
         var focus = root,
             nodes = pack.nodes(root),
             view;
 
-        var bubble = svg.selectAll("g.bubble")
-            .data(pack.nodes(root))
+        var bubble = svg.selectAll('g.bubble')
+            .data(nodes)
             .enter()
-            .append("g")
-            .attr("class", "bubble");
+            .append('g')
+            .attr('class', 'bubble');
 
-        var valuePath = bubble.append("path")
-            .attr("class", function (d) {
-                return d.parent ? d.children ? "node" : "node node--leaf valuePath" : "node node--root";
+        var valuePath = bubble.append('path')
+            .attr('class', function (d) {
+                return d.parent ? d.children ? 'node' : 'node node--leaf valuePath' : 'node node--root';
             })
-            .on("click", function (d) {
+            .on('click', function (d) {
                 if (focus !== d) {
                     zoom(d);
                     d3.event.stopPropagation();
                 }
             });
 
-        var remainingPath = bubble.append("path")
-            .attr("class", function (d) {
-                return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root";
+        var remainingPath = bubble.append('path')
+            .attr('class', function (d) {
+                return d.parent ? d.children ? 'node' : 'node node--leaf' : 'node node--root';
             })
-            .style("fill", function (d) {
+            .style('fill', function (d) {
                 return d.children ? color(d.depth) : null;
             })
-            .on("click", function (d) {
+            .on('click', function (d) {
                 if (focus !== d) {
                     zoom(d);
                     d3.event.stopPropagation();
@@ -110,25 +110,25 @@
 
         /* ------------------------------------------------------------- */
 
-        var text = svg.selectAll("text")
+        var text = svg.selectAll('text')
             .data(nodes)
             .enter()
-            .append("text")
-            .attr("class", "label")
-            .style("fill-opacity", function (d) {
+            .append('text')
+            .attr('class', 'label')
+            .style('fill-opacity', function (d) {
                 return d.parent === root ? 1 : 0;
             })
-            .style("display", function (d) {
-                return d.parent === root ? null : "none";
+            .style('display', function (d) {
+                return d.parent === root ? null : 'none';
             })
             .text(function (d) {
                 return d.name;
             });
 
-        var node = svg.selectAll(".bubble,text");
+        var node = svg.selectAll('.bubble,text');
 
-        d3.select("body")
-            .on("click", function () {
+        d3.select('body')
+            .on('click', function () {
                 zoom(root);
             });
 
@@ -139,41 +139,41 @@
 
             var transition = d3.transition()
                 .duration(d3.event.altKey ? 7500 : 750)
-                .tween("zoom", function () {
+                .tween('zoom', function () {
                     var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
                     return function (t) {
                         zoomTo(i(t));
                     };
                 });
 
-            transition.selectAll("text")
+            transition.selectAll('text')
                 .filter(function (d) {
-                    return d.parent === focus || this.style.display === "inline";
+                    return d.parent === focus || this.style.display === 'inline';
                 })
-                .style("fill-opacity", function (d) {
+                .style('fill-opacity', function (d) {
                     return d.parent === focus ? 1 : 0;
                 })
-                .each("start", function (d) {
-                    if (d.parent === focus) this.style.display = "inline";
+                .each('start', function (d) {
+                    if (d.parent === focus) this.style.display = 'inline';
                 })
-                .each("end", function (d) {
-                    if (d.parent !== focus) this.style.display = "none";
+                .each('end', function (d) {
+                    if (d.parent !== focus) this.style.display = 'none';
                 });
         }
 
         function zoomTo(v) {
             var k = diameter / v[2];
             view = v;
-            node.attr("transform", function (d) {
-                return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")";
+            node.attr('transform', function (d) {
+                return 'translate(' + (d.x - v[0]) * k + ',' + (d.y - v[1]) * k + ')';
             });
 
-            valuePath.attr("d", function (d) {
+            valuePath.attr('d', function (d) {
                 d.k = k;
                 return valueArc(d);
             });
 
-            remainingPath.attr("d", function (d) {
+            remainingPath.attr('d', function (d) {
                 d.k = k;
                 return remainingArc(d);
             });
