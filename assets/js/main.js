@@ -34,36 +34,17 @@
                 return d.size;
             });
 
-        var valueArc = d3.svg.arc()
-            .innerRadius(function (d) {
-                return d.r * d.k - donutSize;
-            })
-            .outerRadius(function (d) {
-                return d.r * d.k;
-            })
-            .startAngle(0)
-            .endAngle(function (d) {
-                if(d.children) {
-                    return 0;
-                }
-                return d.progress / 100 * 2 * Math.PI;
+        var pie = d3.layout.pie()
+            .value(function (d) {
+                return d.progress ? d.progress : 1;
             });
 
-        var remainingArc = d3.svg.arc()
+        var arc = d3.svg.arc()
             .innerRadius(function (d) {
                 return d.r * d.k - donutSize;
             })
             .outerRadius(function (d) {
                 return d.r * d.k;
-            })
-            .startAngle(function (d) {
-                if(d.children) {
-                    return 0;
-                }
-                return d.progress / 100 * 2 * Math.PI;
-            })
-            .endAngle(function () {
-                return 2 * Math.PI;
             });
 
         var svg = d3.select('body')
@@ -74,7 +55,7 @@
             .attr('transform', 'translate(' + diameter / 2 + ',' + diameter / 2 + ')');
 
         var focus = root,
-            nodes = pack.nodes(root),
+            nodes = addPieData(pack.nodes(root), pie),
             view;
 
         var bubble = svg.selectAll('g.bubble')
@@ -83,18 +64,7 @@
             .append('g')
             .attr('class', 'bubble');
 
-        var valuePath = bubble.append('path')
-            .attr('class', function (d) {
-                return d.parent ? d.children ? 'node' : 'node node--leaf valuePath' : 'node node--root';
-            })
-            .on('click', function (d) {
-                if (focus !== d) {
-                    zoom(d);
-                    d3.event.stopPropagation();
-                }
-            });
-
-        var remainingPath = bubble.append('path')
+        var path = bubble.append('path')
             .attr('class', function (d) {
                 return d.parent ? d.children ? 'node' : 'node node--leaf' : 'node node--root';
             })
@@ -168,14 +138,9 @@
                 return 'translate(' + (d.x - v[0]) * k + ',' + (d.y - v[1]) * k + ')';
             });
 
-            valuePath.attr('d', function (d) {
+            path.attr('d', function (d) {
                 d.k = k;
-                return valueArc(d);
-            });
-
-            remainingPath.attr('d', function (d) {
-                d.k = k;
-                return remainingArc(d);
+                return arc(d);
             });
         }
 
@@ -189,6 +154,25 @@
                 return 1;
             }
             return 1 + d3.max(branch.children.map(depthCount));
+        }
+
+        /**
+         * After pack is applied we need to add pie information to each
+         * node so path will be calculated properly.
+         * to each node
+         * @param nodes
+         * @param pie
+         */
+        function addPieData(nodes, pie) {
+            nodes.forEach(function (d) {
+                var pieData = pie([d])[0];
+                for (var p in pieData) {
+                    if (!d.hasOwnProperty(p) && typeof pieData[p] !== 'object') {
+                        d[p] = pieData[p];
+                    }
+                }
+            });
+            return nodes;
         }
     };
 
