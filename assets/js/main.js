@@ -27,6 +27,8 @@
             .range(['hsl(152,80%,80%)', 'hsl(228,30%,40%)'])
             .interpolate(d3.interpolateHcl);
 
+        var pieColors = d3.scale.category20();
+
         var pack = d3.layout.pack()
             .padding(padding)
             .size([diameter, diameter])
@@ -36,7 +38,7 @@
 
         var pie = d3.layout.pie()
             .value(function (d) {
-                return d.progress ? d.progress : 1;
+                return d;
             });
 
         var arc = d3.svg.arc()
@@ -55,11 +57,16 @@
             .attr('transform', 'translate(' + diameter / 2 + ',' + diameter / 2 + ')');
 
         var focus = root,
-            nodes = addPieData(pack.nodes(root), pie),
+            nodes = pack.nodes(root),
+            pieNodes,
             view;
 
+        // add pie information for each node
+        pieNodes = addPieData(nodes, pie);
+        focus = pieNodes[0];
+
         var bubble = svg.selectAll('g.bubble')
-            .data(nodes)
+            .data(pieNodes)
             .enter()
             .append('g')
             .attr('class', 'bubble');
@@ -69,7 +76,7 @@
                 return d.parent ? d.children ? 'node' : 'node node--leaf' : 'node node--root';
             })
             .style('fill', function (d) {
-                return d.children ? color(d.depth) : null;
+                return d.children ? color(d.depth) : pieColors(d.slice);
             })
             .on('click', function (d) {
                 if (focus !== d) {
@@ -81,7 +88,7 @@
         /* ------------------------------------------------------------- */
 
         var text = svg.selectAll('text')
-            .data(nodes)
+            .data(pieNodes)
             .enter()
             .append('text')
             .attr('class', 'label')
@@ -164,17 +171,35 @@
          * @param pie
          */
         function addPieData(nodes, pie) {
+            var newNodes = [];
+
             nodes.forEach(function (d) {
-                var pieData = pie([d])[0];
-                for (var p in pieData) {
-                    if (!d.hasOwnProperty(p) && typeof pieData[p] !== 'object') {
-                        d[p] = pieData[p];
+                    var pieData;
+
+                    if (d.hasOwnProperty('sectors')) {
+                        pieData = pie(d['sectors']);
+                    } else {
+                        // It's parent bubble and it doesn't have sectors
+                        pieData = pie([1]);
                     }
+
+                    pieData.forEach(function (node, i) {
+                        var pieNode = Object.create(d);
+
+                        for (var p in node) {
+                            if (!d.hasOwnProperty(p)) {
+                                pieNode[p] = node[p];
+                            }
+                        }
+                        pieNode.slice = i;
+                        newNodes.push(pieNode);
+                    });
                 }
-            });
-            return nodes;
+            );
+
+            return newNodes;
         }
-    };
+    }
 
 }());
 
