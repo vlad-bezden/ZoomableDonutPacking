@@ -9,7 +9,8 @@
         padding = 2,
         donutSize = 25,
         diameter = 800,
-        root;
+        root,
+        pieDataProperty = 'sectors';
 
     // load json data
     d3.json('./assets/data/flare.json', function (error, json) {
@@ -39,7 +40,8 @@
         var pie = d3.layout.pie()
             .value(function (d) {
                 return d;
-            });
+            })
+            .sort(null);
 
         var arc = d3.svg.arc()
             .innerRadius(function (d) {
@@ -177,16 +179,16 @@
             var newNodes = [];
 
             nodes.forEach(function (d) {
-                    var pieData;
+                    var pieNodes;
 
-                    if (d.hasOwnProperty('sectors')) {
-                        pieData = pie(d['sectors']);
+                    if (d.hasOwnProperty(pieDataProperty)) {
+                        pieNodes = pie(d[pieDataProperty]);
                     } else {
                         // It's parent bubble and it doesn't have sectors
-                        pieData = pie([1]);
+                        pieNodes = pie([1]);
                     }
 
-                    pieData.forEach(function (node, i) {
+                    pieNodes.forEach(function (node, i) {
                         var pieNode = Object.create(d);
 
                         for (var p in node) {
