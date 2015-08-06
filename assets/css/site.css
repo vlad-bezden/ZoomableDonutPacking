@@ -7,10 +7,6 @@
     stroke-width: 2px;
 }
 
-.node--leaf {
-    fill: #dadada;
-}
-
 .label {
     font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-anchor: middle;
@@ -21,9 +17,5 @@
 .node--root,
 .node--leaf {
     pointer-events: none;
-}
-
-.valuePath {
-    fill: #117716
 }
 

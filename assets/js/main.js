@@ -58,7 +58,7 @@
 
         var nodes = pack.nodes(root),
             pieNodes = addPieData(nodes, pie),  // add pie information for each node
-            focus = root, // pieNodes[0],
+            focus = root,
             view;
 
         var bubble = svg.selectAll('g.bubble')
@@ -84,7 +84,7 @@
         /* ------------------------------------------------------------- */
 
         var text = svg.selectAll('text')
-            .data(pieNodes)
+            .data(nodes)
             .enter()
             .append('text')
             .attr('class', 'label')
@@ -121,16 +121,23 @@
 
             transition.selectAll('text')
                 .filter(function (d) {
-                    return d.parent === focus.__proto__ || this.style.display === 'inline';
+                    // returning false will keep label on and true will filter it out
+                    return d.parent === focus
+                        || d.parent === focus.__proto__
+                        || this.style.display === 'inline';
                 })
                 .style('fill-opacity', function (d) {
-                    return d.parent === focus.__proto__ ? 1 : 0;
+                    return d.parent === focus || d.parent === focus.__proto__ ? 1 : 0;
                 })
                 .each('start', function (d) {
-                    if (d.parent === focus.__proto__) this.style.display = 'inline';
+                    if (d.parent === focus || d.parent === focus.__proto__) {
+                        this.style.display = 'inline';
+                    }
                 })
                 .each('end', function (d) {
-                    if (d.parent !== focus.__proto__) this.style.display = 'none';
+                    if (d.parent !== focus && d.parent !== focus.__proto__) {
+                        this.style.display = 'none';
+                    }
                 });
         }
 
