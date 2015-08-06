@@ -127,15 +127,15 @@
                         || this.style.display === 'inline';
                 })
                 .style('fill-opacity', function (d) {
-                    return d.parent === focus || d.parent === focus.__proto__ ? 1 : 0;
+                    return d.parent === focus || d.parent === Object.getPrototypeOf(focus) ? 1 : 0;
                 })
                 .each('start', function (d) {
-                    if (d.parent === focus || d.parent === focus.__proto__) {
+                    if (d.parent === focus || d.parent === Object.getPrototypeOf(focus)) {
                         this.style.display = 'inline';
                     }
                 })
                 .each('end', function (d) {
-                    if (d.parent !== focus && d.parent !== focus.__proto__) {
+                    if (d.parent !== focus && d.parent !== Object.getPrototypeOf(focus)) {
                         this.style.display = 'none';
                     }
                 });
@@ -190,7 +190,7 @@
                         var pieNode = Object.create(d);
 
                         for (var p in node) {
-                            if (!d.hasOwnProperty(p)) {
+                            if (node.hasOwnProperty(p) && !d.hasOwnProperty(p)) {
                                 pieNode[p] = node[p];
                             }
                         }
@@ -203,6 +203,5 @@
             return newNodes;
         }
     }
-
 }());
 
