@@ -56,14 +56,10 @@
             .append('g')
             .attr('transform', 'translate(' + diameter / 2 + ',' + diameter / 2 + ')');
 
-        var focus = root,
-            nodes = pack.nodes(root),
-            pieNodes,
+        var nodes = pack.nodes(root),
+            pieNodes = addPieData(nodes, pie),  // add pie information for each node
+            focus = root, // pieNodes[0],
             view;
-
-        // add pie information for each node
-        pieNodes = addPieData(nodes, pie);
-        focus = pieNodes[0];
 
         var bubble = svg.selectAll('g.bubble')
             .data(pieNodes)
@@ -125,16 +121,16 @@
 
             transition.selectAll('text')
                 .filter(function (d) {
-                    return d.parent === focus || this.style.display === 'inline';
+                    return d.parent === focus.__proto__ || this.style.display === 'inline';
                 })
                 .style('fill-opacity', function (d) {
-                    return d.parent === focus ? 1 : 0;
+                    return d.parent === focus.__proto__ ? 1 : 0;
                 })
                 .each('start', function (d) {
-                    if (d.parent === focus) this.style.display = 'inline';
+                    if (d.parent === focus.__proto__) this.style.display = 'inline';
                 })
                 .each('end', function (d) {
-                    if (d.parent !== focus) this.style.display = 'none';
+                    if (d.parent !== focus.__proto__) this.style.display = 'none';
                 });
         }
 
