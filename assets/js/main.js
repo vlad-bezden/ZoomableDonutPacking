@@ -123,7 +123,7 @@
                 .filter(function (d) {
                     // returning false will keep label on and true will filter it out
                     return d.parent === focus
-                        || d.parent === focus.__proto__
+                        || d.parent === Object.getPrototypeOf(focus)
                         || this.style.display === 'inline';
                 })
                 .style('fill-opacity', function (d) {
