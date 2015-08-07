@@ -13,6 +13,22 @@
             src="http://d3js.org/d3.v3.min.js"
             charset="utf-8"></script>
     <script type="text/javascript"
-            src="assets/js/main.js"></script>
+            src="assets/js/chart.js"></script>
+
+   <script type="application/javascript">
+       // load json data
+       d3.json('./assets/data/flare.json', function (error, data) {
+           if (error) {
+               console.error(error);
+               return;
+           }
+           var chart = zoomableDonutPackingChart
+                   .data(data)
+                   .diameter(1000)
+                   .padding(5);
+
+           chart.render();
+       });
+   </script>
 </body>
 </html>
